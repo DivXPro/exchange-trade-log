@@ -1,12 +1,14 @@
 const UMStream = require('@binance/futures-connector/src/modules/websocket/UMStream');
 const { logger } = require('./logger');
+const { addFetureTrade } = require('./trade');
 
 // Define callbacks for different events
 const callbacks = {
   open: () => logger.info('Connected Feture Websocket server'),
   close: () => logger.info('Disconnected Feture Websocket server'),
   message: (data) => {
-    logger.info(new Date(jsonData.E), jsonData);
+    const jsonData = JSON.parse(data);
+    addFetureTrade(jsonData);
   },
 };
 

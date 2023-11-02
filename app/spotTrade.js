@@ -7,7 +7,7 @@ const callbacks = {
   close: () => console.debug('Disconnected with Websocket server'),
   message: (data) => {
     const jsonData = JSON.parse(data);
-    console.info(new Date(jsonData.E), jsonData);
+    addTrade(jsonData);
   },
 };
 
