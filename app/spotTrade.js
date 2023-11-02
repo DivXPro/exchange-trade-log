@@ -22,3 +22,5 @@ const wmSocketClient = new WebsocketStream({
 });
 
 wmSocketClient.aggTrade('btcusdt');
+wmSocketClient.aggTrade('solusdt');
+wmSocketClient.aggTrade('frontusdt');

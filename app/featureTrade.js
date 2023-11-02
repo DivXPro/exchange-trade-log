@@ -20,3 +20,4 @@ const wmSocketClient = new UMStream({
 
 wmSocketClient.aggregateTradeStream('btcusdt');
 wmSocketClient.aggregateTradeStream('solusdt');
+wmSocketClient.aggregateTradeStream('frontusdt');
