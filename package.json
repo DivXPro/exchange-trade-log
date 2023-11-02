@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "feture": "node app/featureTrade.js",
+    "spot": "node app/spotTrade.js"
+  },
+  "dependencies": {
+    "@binance/connector": "^3.0.0",
+    "@binance/futures-connector": "^0.1.0",
+    "dotenv": "^16.3.1",
+    "mysql2": "^3.6.2",
+    "pm2": "^5.3.0",
+    "sequelize": "^6.33.0"
+  }
+}
