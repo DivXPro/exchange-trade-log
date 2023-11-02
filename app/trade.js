@@ -63,19 +63,21 @@ const AggTradeModel = {
 };
 
 const Trade = sequelize.define('agg_trade', AggTradeModel, { freezeTableName: true });
-const FetureTrade = sequelize.define('fetrue_agg_trade', AggTradeModel, { freezeTableName: true });
+const FuturesTrade = sequelize.define('futrues_agg_trade', AggTradeModel, {
+  freezeTableName: true,
+});
 
 function addTrade(data) {
   return Trade.create(data);
 }
-function addFetureTrade(data) {
-  return FetureTrade.create(data);
+function addFuturesTrade(data) {
+  return FuturesTrade.create(data);
 }
 
 (async () => {
   await Trade.sync({ force: false }); // force:true => delete it if exists
-  await FetureTrade.sync({ force: false });
+  await FuturesTrade.sync({ force: false });
 })();
 
 module.exports.addTrade = addTrade;
-module.exports.addFetureTrade = addFetureTrade;
+module.exports.addFuturesTrade = addFuturesTrade;
