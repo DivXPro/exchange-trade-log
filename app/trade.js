@@ -2,11 +2,12 @@ require('dotenv').config();
 const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize({
-  dialect: process.env.DB_DIALECT,
+  dialect: process.env.DB_DIALECT || 'mysql',
   host: process.env.DB_HOST,
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
+  logging: false,
 });
 
 const AggTradeModel = {
@@ -20,7 +21,7 @@ const AggTradeModel = {
     field: 'type',
   },
   E: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.BIGINT,
     field: 'event_time',
   },
   s: {
@@ -28,7 +29,7 @@ const AggTradeModel = {
     field: 'symbol',
   },
   a: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.BIGINT,
     field: 'agg_trade_id',
   },
   p: {
@@ -40,15 +41,15 @@ const AggTradeModel = {
     field: 'amount',
   },
   f: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.BIGINT,
     field: 'first_trade_id',
   },
   l: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.BIGINT,
     field: 'last_trade_id',
   },
   T: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.BIGINT,
     field: 'trade_time',
   },
   m: {
